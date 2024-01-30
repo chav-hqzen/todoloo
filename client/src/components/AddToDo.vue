@@ -38,19 +38,22 @@ export default {
 <style scoped>
 form {
   display: flex;
+  justify-content: center;
   gap: 24px;
-  margin: 5% 10%;
+  margin: 36px auto;
+  /* max-width: 200px; */
 }
 
 input[type='text'] {
-  flex: 10;
+  width: 50%;
   padding: 14px;
   border-radius: 8px;
 }
 
 input[type='submit'] {
-  flex: 2;
+  min-width: 100px;
   font-weight: bold;
   border-radius: 8px;
+  cursor: pointer;
 }
 </style>

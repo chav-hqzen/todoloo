@@ -27,7 +27,9 @@ export default {
 
 <style scoped>
 div {
+  width: 100%;
   margin-top: 36px;
+  padding: 16px;
 }
 
 h2 {
@@ -37,7 +39,11 @@ h2 {
 ul {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
   gap: 24px;
   margin-top: 24px;
+  max-width: 640px;
+  width: 100%;
+  list-style: none;
 }
 </style>

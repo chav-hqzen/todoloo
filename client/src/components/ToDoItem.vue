@@ -1,7 +1,7 @@
 <template>
   <div class="todo-item" v-bind:class="{ 'is-completed': todo.completed }">
     <div>
-      <input type="checkbox" @change="markComplete" />
+      <input type="checkbox" @change="markComplete" :checked="todo.completed" />
       <span>{{ todo.title }}</span>
     </div>
     <button class="del" @click="$emit('del-todo', todo.id)">×</button>
@@ -25,7 +25,7 @@ export default {
 
 <style scoped>
 .todo-item {
-  margin: 0 12px;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
