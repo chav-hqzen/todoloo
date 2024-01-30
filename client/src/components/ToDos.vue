@@ -3,7 +3,11 @@
     <h2>All ToDoLoos:</h2>
     <ul>
       <li v-for="todo in todos" v-bind:key="todo.id">
-        <ToDoItem v-bind:todo="todo" />
+        <ToDoItem
+          v-bind:todo="todo"
+          @complete-todo="$emit('complete-todo', todo)"
+          @del-todo="$emit('del-todo', todo.id)"
+        />
       </li>
     </ul>
   </div>

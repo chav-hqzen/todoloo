@@ -1,8 +1,12 @@
 <template>
   <div id="app">
     <TitleHeader></TitleHeader>
-    <AddToDo></AddToDo>
-    <ToDos v-bind:todos="todos"></ToDos>
+    <AddToDo v-on:add-todo="addTodo"></AddToDo>
+    <ToDos
+      v-bind:todos="todos"
+      @complete-todo="completeTodo"
+      @del-todo="deleteTodo"
+    ></ToDos>
   </div>
 </template>
 
@@ -34,6 +38,20 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    deleteTodo(id) {
+      this.todos = this.todos.filter((todo) => todo.id !== id);
+    },
+    addTodo(todo) {
+      this.todos = [...this.todos, todo];
+    },
+    completeTodo(todo) {
+      const todoItem = this.todos.find((item) => item.id === todo.id);
+      if (todoItem) {
+        todoItem.completed = !todoItem.completed;
+      }
+    },
   },
 };
 </script>
