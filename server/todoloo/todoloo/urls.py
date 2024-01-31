@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('todos.urls'))
+    path('api/', include('todos.urls')),
+    path('api-sileo/', include(('sileo.sileo.urls', 'sileo'), namespace='sileo'))
 ]

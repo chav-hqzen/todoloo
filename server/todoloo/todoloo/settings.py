@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'todos',
+    'sileo',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -129,3 +130,6 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:8080'
 ]
 
+SILEO_API_FALLBACK_VERSION = 'v1'
+SILEO_ALLOWED_VERSIONS = ['v1']
+API_MIDDLEWARE = []
