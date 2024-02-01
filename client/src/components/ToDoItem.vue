@@ -4,7 +4,7 @@
       <input type="checkbox" @change="markComplete" :checked="todo.completed" />
       <span>{{ todo.title }}</span>
     </div>
-    <button class="del" @click="$emit('del-todo', todo.id)">×</button>
+    <button class="del" @click="$emit('del-todo', todo)">×</button>
   </div>
 </template>
 

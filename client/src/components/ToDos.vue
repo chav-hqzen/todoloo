@@ -2,11 +2,11 @@
   <div>
     <h2>All ToDoLoos:</h2>
     <ul>
-      <li v-for="todo in todos" v-bind:key="todo.id">
+      <li v-for="todo in todos" :key="todo.pk">
         <ToDoItem
           v-bind:todo="todo"
           @complete-todo="$emit('complete-todo', todo)"
-          @del-todo="$emit('del-todo', todo.id)"
+          @del-todo="$emit('del-todo', todo)"
         />
       </li>
     </ul>

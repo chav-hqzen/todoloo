@@ -16,8 +16,15 @@ class TodoResource(Resource):
     ]
     update_filter_fields = ['pk']
     delete_filter_fields = ['pk']
-    filter_fields = ['pk']
+    filter_fields = ['pk', 'title']
     form_class = TodoForm
+
+    def delete_object(self, obj):
+
+        obj.delete()
+        return {'pk': obj.pk}
+
+
   
 register(namespace='todos', name='todo', resource=TodoResource, version='v1')
 

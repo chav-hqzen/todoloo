@@ -48,7 +48,6 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -127,9 +126,17 @@ STATIC_URL = '/static/'
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:8080',
-    'http://127.0.0.1:8080'
+    'http://127.0.0.1:8080',
+    'http://127.0.0.1:8000'
 ]
 
 SILEO_API_FALLBACK_VERSION = 'v1'
 SILEO_ALLOWED_VERSIONS = ['v1']
 API_MIDDLEWARE = []
+
+CORS_ORIGIN_WHITELIST = [ 
+    'http://localhost:8080',
+    'http://127.0.0.1:8080',
+]
+
+CSRF_COOKIE_SECURE = False
